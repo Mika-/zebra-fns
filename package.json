@@ -1,0 +1,14 @@
+{
+  "name": "zebra-fns",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mika-/zebra-fns"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+  },
+  "devDependencies": {
+  }
+}
