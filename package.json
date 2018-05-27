@@ -5,15 +5,21 @@
     "type": "git",
     "url": "https://github.com/Mika-/zebra-fns"
   },
-  "main": "src/index.js",
+  "main": "dist/cjs/zebra-fns.js",
+  "module": "dist/esm/zebra-fns.js",
+  "browser": "dist/umd/zebra-fns.js",
   "license": "MIT",
   "scripts": {
+    "build": "rollup -c",
     "test": "mocha --require babel-core/register"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
-    "mocha": "^5.1.1"
+    "mocha": "^5.1.1",
+    "rollup": "^0.59.3",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-babel-minify": "^5.0.0"
   }
 }
