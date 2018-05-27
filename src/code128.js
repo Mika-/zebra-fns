@@ -1,2 +1,2 @@
-module.exports = (input) => {
+export default (input) => {
 }

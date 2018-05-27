@@ -8,9 +8,11 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --require babel-core/register"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "mocha": "^5.1.1"
   }

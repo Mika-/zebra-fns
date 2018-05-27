@@ -1,3 +1,1 @@
-module.exports = {
-    code128: require('./code128'),
-}
+export {default as code128} from './code128';
