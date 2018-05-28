@@ -2,6 +2,8 @@ const START_CODE_A = 103;
 const START_CODE_B = 104;
 const START_CODE_C = 105;
 
+const CHAR_CODE_OFFSET = 32;
+
 const bars = [
     0b11011001100, 0b11001101100, 0b11001100110, 0b10010011000,
     0b10010001100, 0b10001001100, 0b10011001000, 0b10011000100,
@@ -55,4 +57,32 @@ const encodeBar = (character) => bars[character].toString(2);
 
 export default (input) => {
     const startCode = resolveCodeSet(input);
+
+    let sum = startCode;
+    let str = '';
+    let i = 0;
+    let position = 0;
+
+    str += encodeBar(startCode);
+
+    while(i < input.length) {
+        let value;
+
+        if (startCode === START_CODE_C) {
+            value = parseInt(input.charAt(i) + input.charAt(i + 1));
+            i += 2;
+        } else {
+            value = input.charCodeAt(i) - CHAR_CODE_OFFSET;
+            ++i;
+        }
+
+        sum += value * (position + 1);
+        str += encodeBar(value);
+        ++position;
+    }
+
+    str += encodeBar(sum % 103);
+    str += encodeBar(108);
+
+    return str;
 }
